@@ -1,0 +1,25 @@
+server:
+  port: 9999
+
+spring:
+  datasource:
+    username: root
+    password: 123456
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/xdb?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC
+  redis: 
+    host: localhost
+    port: 6379
+mybatis-plus:
+  global-config:
+    banner: false
+    db-config: 
+      logic-delete-field: deleted
+      logic-not-delete-value: 0
+      logic-delete-value: 1
+  mapper-locations: classpath*:/mapper/**/*.xml
+  type-aliases-package: com.simple.webdemo.sys.entity
+logging:
+  level:
+    com.simple.webdemo: debug
+

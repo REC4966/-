@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.simple.webdemo.sys.mapper.UserMapper">
+    <select id="selectRole" parameterType="Integer" resultType="String">
+        SELECT role_name
+        FROM x_user,x_user_role,x_role
+        WHERE x_user.id=x_user_role.user_id
+          AND x_user_role.role_id=x_role.role_id
+          AND x_user.id=#{id}
+    </select>
+</mapper>
